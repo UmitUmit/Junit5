@@ -41,4 +41,20 @@ public class ParameterizedTests {
     void csvSource_StringWithDifferentDelimiterTest(String param1, String param2){
         System.out.println("param1 = " + param1 + ", param2 = " + param2);
     }
+
+    @ParameterizedTest
+    @CsvFileSource(files = "src/test/resources/params/shoppinglist.csv", numLinesToSkip = 1)
+    void csvFileSource_StringDoubleIntStringString(String name, double price, int quantity, String uom, String provider){
+        System.out.println("name = " + name + ", price = " + price + ", quantity = " +
+                quantity + ", uom = " + uom + ", provider = " + provider);
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(files = "src/test/resources/params/shoppinglist3.csv", numLinesToSkip = 1, delimiterString = "___")
+    void csvFileSource_StringDoubleIntStringStringSpecifiedDelimiter(String name, double price, int quantity,
+                                                                     String uom, String provider){
+        System.out.println("name = " + name + ", price = " + price + ", quantity = " +
+                quantity + ", uom = " + uom + ", provider = " + provider);
+    }
+
 }
