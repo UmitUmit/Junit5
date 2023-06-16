@@ -3,7 +3,7 @@ package junit5tests;
 import org.junit.jupiter.api.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)//In order to use @BeforeAll and @AfterAll on non-static methods
-public class FirstTestclass {
+public class FirstTestClass {
 
     @BeforeAll
     void beforeAll(){
